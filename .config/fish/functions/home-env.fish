@@ -8,7 +8,7 @@ function home-env
         git add -f README.md
         git add -f .config
         
-        git commit -m "pushed by home-env"
+        git commit -m "pushed by home-env command"
         git push origin main
         #git diff --exit-code
         # 差分があったら実行
