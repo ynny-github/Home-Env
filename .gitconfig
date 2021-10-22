@@ -1,0 +1,11 @@
+[core]
+	editor = code --wait
+	autocrlf = false
+[user]
+	name = Yuya Nagai
+	email = ynny.opem@gmail.com
+
+[credential]
+	helper = "!f() { /root/.vscode-server/bin/6cba118ac49a1b88332f312a8f67186f7f3c1643/node /tmp/vscode-remote-containers-1050e98bda8c5864e6f78d6daaa60dd9da7ad358.js $*; }; f"
+[init]
+	defaultBranch = main

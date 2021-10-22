@@ -12,11 +12,11 @@ alias se sudoedit
 # warn
 # error
 alias vagrant-with-detailerror "env VAGRANT_LOG=info vagrant"
-# direnv を使用できるようにする
-eval (direnv hook fish)
 
 alias history-all-delete "history clear"
 
+# Settings for hook
+load-hook direnv
 
 # settings for vscode remote extension
 if is_remote_extension
