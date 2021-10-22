@@ -10,4 +10,4 @@ git init
 git remote add origin https://github.com/ynny-github/Home-Env.git
 git fetch origin
 git merge origin/main
-
+git branch -M main

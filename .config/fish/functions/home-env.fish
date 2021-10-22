@@ -6,6 +6,7 @@ function home-env
         # 現在の監視対象
         # 監視対象を増やしたら追加する
         git add -f README.md
+        git add -f init.sh
         git add -f .config
         
         git commit -m "pushed by home-env command"
