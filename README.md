@@ -1,5 +1,11 @@
 # HOME Enviroment for Linux
 
+## How to init ?
+curl を用いた方法
+```
+curl -L https://raw.githubusercontent.com/ynny-github/Home-Env/main/init.sh | bash
+```
+
 ## 現在の管理方法
 Home ディレクトリに .git を配置し、すべてのファイル、ディレクトリを exclude に設定
 
