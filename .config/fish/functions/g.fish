@@ -1,3 +1,4 @@
+# OS に依存しないために、Rust に落とし込む
 function g
     argparse -n g "t/tc" "a/ap" -- $argv
 

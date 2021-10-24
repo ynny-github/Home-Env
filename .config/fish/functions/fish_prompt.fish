@@ -83,6 +83,8 @@ function fish_prompt --description 'Write out the prompt'
         set_color normal
 
         echo -n "$suffix "
+    else if is_remote_extension
+        printf 'container %s > ' (prompt_pwd)
     else 
         printf '%s@%s %s > ' $USER (prompt_hostname) (prompt_pwd)
     end
