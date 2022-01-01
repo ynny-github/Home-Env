@@ -1,8 +1,9 @@
 # all env
+set -x SHELL /usr/bin/fish
 # remove greeting message
 set fish_greeting ""
+# ユーザ空間のプログラムの保存先
 set PATH $HOME/.local/bin $PATH
-set -x SHELL /usr/bin/fish
 
 alias s sudo
 alias se sudoedit
@@ -14,6 +15,7 @@ alias se sudoedit
 alias vagrant-with-detailerror "env VAGRANT_LOG=info vagrant"
 
 alias history-all-delete "history clear"
+
 
 # Settings for hook
 load-hook direnv
@@ -45,4 +47,9 @@ if is_wsl
     alias gpk "curl -s https://github.com/yn-git.keys | clip.exe" 
     alias sshfordocker "ssh -NL localhost:23750:/var/run/docker.sock docker-host &"
     alias cmd_to_deploy_dotfiles "echo 'git clone https://github.com/ynny-github/dotfiles.git && cd dotfiles && ./install.fish' | clip.exe "end
+end
+
+# colab
+if is_colab
+    cd ~/gdrive/MyDrive/colab_dev/Projects
 end
