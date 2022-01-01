@@ -2,8 +2,6 @@
 set -x SHELL /usr/bin/fish
 # remove greeting message
 set fish_greeting ""
-# ユーザ空間のプログラムの保存先
-set PATH $HOME/.local/bin $PATH
 
 alias s sudo
 alias se sudoedit
@@ -31,6 +29,8 @@ end
 
 # settings for wsl
 if is_wsl
+    # ユーザ空間のプログラムの保存先
+    set PATH $HOME/.local/bin $PATH
     # Settings for WSL
     # key agent
     if ! pgrep gpg-agent > /dev/null;

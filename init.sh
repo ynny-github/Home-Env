@@ -3,7 +3,7 @@
 cd ~
 
 # 削除ファイル
-mv -r .config tmp-config
+mv .config tmp-config
 
 # 既存ファイル、フォルダがある場合にクローンしたいときの処理
 git init
