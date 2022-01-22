@@ -15,6 +15,7 @@ function fish_prompt --description 'Write out the prompt'
         set hn prompt_hostname
     end
 
+    printf "\n"
     printf "%s %s [%s]\n" $hn $USER (date "+%m/%d/%Y %H:%M")
     printf '%s\n' (realpath .)
     printf '> '
