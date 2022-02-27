@@ -24,9 +24,14 @@ load-hook direnv
 
 # Settings for mac
 if is_mac
-    set code_path (which code)
-    set -gx SUDO_EDITOR "$code_path --wait"
-    set -gx EDITOR "$code_path --wait"
+    # set code_path (which code)
+    # set -gx SUDO_EDITOR "$code_path --wait"
+    # set -gx EDITOR "$code_path --wait"
+
+    # code で開けないため、micro で対応
+    set editor_path (which micro)
+    set -gx EDITOR "$editor_path"
+    set -gx SUDO_EDITOR "$editor_path"
 end
 
 # settings for vscode remote extension
