@@ -1,3 +1,7 @@
+# if status is-interactive
+    # Commands to run in interactive sessions can go here
+# end
+
 # all env
 set -x SHELL /usr/bin/fish
 # remove greeting message
@@ -17,6 +21,13 @@ alias history-all-delete "history clear"
 
 # Settings for hook
 load-hook direnv
+
+# Settings for mac
+if is_mac
+    set code_path (which code)
+    set -gx SUDO_EDITOR "$code_path --wait"
+    set -gx EDITOR "$code_path --wait"
+end
 
 # settings for vscode remote extension
 if is_remote_extension
@@ -55,3 +66,4 @@ end
 if is_colab
     cd ~/gdrive/MyDrive/colab_dev/Projects
 end
+
