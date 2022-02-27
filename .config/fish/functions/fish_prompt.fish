@@ -11,8 +11,10 @@ function fish_prompt --description 'Write out the prompt'
         set hn "container"
     else if is_colab
         set hn "colab"
+    else if is_mac
+        set hn "mac"    
     else
-        set hn prompt_hostname
+        set hn $prompt_hostname
     end
 
     printf "\n"
