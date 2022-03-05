@@ -11,7 +11,7 @@ function home-env
         git add -f .gitconfig
         git add -f .config/fish
         git add -f .config/micro
-        git add -f .config/gitignore
+        git add -f .config/git
 
         git commit -m "pushed by home-env command"
         git push origin main
