@@ -34,7 +34,7 @@ if is_mac
     set -gx SUDO_EDITOR "$editor_path"
 
     # Open Xcode from cmd
-    alias xcode="open - a /Applications/Xcode.app"
+    alias xcode="open -a /Applications/Xcode.app"
 end
 
 # settings for vscode remote extension
