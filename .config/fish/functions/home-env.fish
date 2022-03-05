@@ -8,8 +8,9 @@ function home-env
         git add -f README.md
         git add -f init.sh
         git add -f .gitignore
-        git add -f .config
-        
+        git add -f .config/fish
+        git add -f .config/micro
+
         git commit -m "pushed by home-env command"
         git push origin main
         #git diff --exit-code
@@ -24,5 +25,5 @@ function home-env
         cd ~
         git pull
     end
-    
+
 end
