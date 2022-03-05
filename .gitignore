@@ -1,6 +1,5 @@
 *
 .*
-.gitconfig
 # coloab 上の config ファイルを除外
 .config/configstore
 .config/Google
