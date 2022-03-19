@@ -2,8 +2,6 @@
     # Commands to run in interactive sessions can go here
 # end
 
-# all env
-set -x SHELL /usr/bin/fish
 # remove greeting message
 set fish_greeting ""
 
@@ -24,6 +22,13 @@ load-hook direnv
 
 # Settings for mac
 if is_mac
+    set PATH /opt/homebrew/bin $PATH
+
+    # Setup GPG and ssh
+    alias pinentry='pinentry-mac'
+    gpgconf --launch gpg-agent
+    set SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)
+
     # set code_path (which code)
     # set -gx SUDO_EDITOR "$code_path --wait"
     # set -gx EDITOR "$code_path --wait"
