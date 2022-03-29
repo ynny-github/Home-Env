@@ -23,6 +23,7 @@ load-hook direnv
 # Settings for mac
 if is_mac
     set PATH /opt/homebrew/bin $PATH
+    alias assh-build="assh config build > ~/.ssh/config"
 
     # Setup GPG and ssh
     alias pinentry='pinentry-mac'
