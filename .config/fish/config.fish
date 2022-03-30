@@ -26,9 +26,12 @@ if is_mac
     alias assh-build="assh config build > ~/.ssh/config"
 
     # Setup GPG and ssh
-    alias pinentry='pinentry-mac'
-    gpgconf --launch gpg-agent
-    set SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)
+    if ! pgrep gpg-agent > /dev/null;
+        gpgconf --launch gpg-agent
+    end
+    if [ -z $SSH_AUTH_SOCK ]
+        set -U SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+    end
 
     # set code_path (which code)
     # set -gx SUDO_EDITOR "$code_path --wait"
