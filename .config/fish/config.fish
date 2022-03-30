@@ -72,7 +72,7 @@ if is_wsl
     # 引数として -ArgumentList '-Command ~' を与えてやれば，~ を実行してくれる
     alias psh-admin "/mnt/c/Windows/System32/WindowsPowerShell/v1.0//powershell.exe Start-Process powershell.exe -Verb RunAs"
     # 自分の公開鍵を取得する
-    alias gpk "curl -s https://github.com/yn-git.keys | clip.exe" 
+    alias gpk "curl -s https://github.com/yn-git.keys | clip.exe"
     alias sshfordocker "ssh -NL localhost:23750:/var/run/docker.sock docker-host &"
     alias cmd_to_deploy_dotfiles "echo 'git clone https://github.com/ynny-github/dotfiles.git && cd dotfiles && ./install.fish' | clip.exe "end
 

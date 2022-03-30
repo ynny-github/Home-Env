@@ -9,7 +9,8 @@ function home-env
         git add -f init.sh
         git add -f .gitignore
         git add -f .gitconfig
-        git add -f .config/fish
+        git add -f .config/fish/functions
+        git add -f .config/fish/config.fish
         git add -f .config/micro
         git add -f .config/git
 
