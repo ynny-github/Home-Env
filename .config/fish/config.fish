@@ -29,9 +29,10 @@ if is_mac
     if ! pgrep gpg-agent > /dev/null;
         gpgconf --launch gpg-agent
     end
-    if [ -z $SSH_AUTH_SOCK ]
-        set -U SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-    end
+    # if [ -z $SSH_AUTH_SOCK ]
+    #    set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+    # end
+    set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
     # set code_path (which code)
     # set -gx SUDO_EDITOR "$code_path --wait"
