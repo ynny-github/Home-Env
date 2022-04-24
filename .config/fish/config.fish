@@ -17,9 +17,6 @@ alias vagrant-with-detailerror "env VAGRANT_LOG=info vagrant"
 alias history-all-delete "history clear"
 
 
-# Settings for hook
-load-hook direnv
-
 # Settings for mac
 if is_mac
     set PATH /opt/homebrew/bin $PATH
@@ -45,6 +42,13 @@ if is_mac
 
     # Open Xcode from cmd
     alias xcode="open -a /Applications/Xcode.app"
+
+    # Written by app
+    test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
+    # <<< conda initialize <<<
 end
 
 # settings for vscode remote extension
@@ -84,13 +88,3 @@ end
 if is_colab
     cd ~/gdrive/MyDrive/colab_dev/Projects
 end
-
-
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
