@@ -4,6 +4,8 @@ cd ~
 
 # 削除ファイル
 mv .config tmp-config
+rm -r tmp-config/fish
+rm -r tmp-config/micro
 
 # 既存ファイル、フォルダがある場合にクローンしたいときの処理
 git init
