@@ -43,6 +43,9 @@ if is_mac
     # Open Xcode from cmd
     alias xcode="open -a /Applications/Xcode.app"
 
+    # Docker settings
+    set -x DOCKER_HOST "tcp://ubuntu:2376"
+
     # Written by app
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
     # >>> conda initialize >>>
@@ -88,3 +91,7 @@ end
 if is_colab
     cd ~/gdrive/MyDrive/colab_dev/Projects
 end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/yn/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
