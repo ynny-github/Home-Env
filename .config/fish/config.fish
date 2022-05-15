@@ -44,14 +44,17 @@ if is_mac
     alias xcode="open -a /Applications/Xcode.app"
 
     # Docker settings
-    set -x DOCKER_HOST "tcp://ubuntu:2376"
+    if test -e /var/run/docker.sock
+        set -x DOCKER_HOST "/var/run/docker.sock"
+    else
+        set -x DOCKER_HOST "ssh://parallels@ubuntu"
+    end
 
     # Written by app
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
-    # <<< conda initialize <<<
+    ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+    set --export --prepend PATH "/Users/yn/.rd/bin"
+    ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 end
 
 # settings for vscode remote extension
@@ -91,7 +94,3 @@ end
 if is_colab
     cd ~/gdrive/MyDrive/colab_dev/Projects
 end
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/yn/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
